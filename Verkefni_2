@@ -1,0 +1,27 @@
+FORR3JS05DU
+Verkefni 2
+1.ECMAScript er scripting-language sem keyrir scripts. ECMAScript var fyrst gert fyrir javascript en styður fleiri forritunarmál í dag
+2.Loosly typed forritunarmál er þegar málið er ekki strangt með hvernig þú skrifar en strongly typed er strangt með hvernig þú skrifar. 
+  Ef þú skrifar syntax vitlaust í strongly typed forritunarmáli færðu error og forritið keyrist ekki en það gerist ekki endilega í loosly 
+  typed forritunarmáli t.d ef þú gleymir að skrifa ; eftir skipun í java script keyrir það samt
+3.Það er enginn munur en þú getur notað annað hvor tegundina af gæsaloppunum í hinum t.d ‘asdad”as”as’ þá eru tvöföldu gæsalappirnar 
+  partur af strengnum
+4.Null og undefined er þegar hlutur er ekki skilgreindur
+5.== og === er bæði notað til að gá hvort tveir hlutir eru sá sami en === gáir líka hvort data týpan sé sú sama
+6.Var er búin til í toppinum á skjalinu eða eins hátt og hún kemst en let er búinn til þar sem þú skrifar það inn KLÁRA
+7.Function declarations:	function theFunction(a,b){
+                                     		return a+b;
+                                      }
+  Function Expression:	var x = function(a,b){
+                                     		return a+b;
+                                      }                                 
+  Arrow function: var x = (a,b) => {return a+b};
+8.“Use strict”; lætur kóðann þinn fara í strict mode svo þú þarft að skrifa all syntax rétt t.d ef þú gleymir að setja ; 
+þá virkar kóðinn ekki en hann gerði það áður en “use strict” var notað
+9.Console.log skrifar út datatýpuna, x prentar út sjálfan sig
+10.foo() skilar 8 af því að bar() er skilgreint 2 sinnum þannig að seinna bar() yfirskrifar fyrri bar() og foo() skilar bar() 
+  og seinna bar() skilar 8 þanig að foo() skilar 8
+11.Þá lætur þýðandinn var fyrir framan sjálfkrafa
+12.Ytri svigi segir þýðandanum að fallið sé expression og innri svigi segir þýðandanum að keyra fallið strax
+13.variable scope er með tvær tegundir af scopes local scopes og global scopes sem áhveður hvar þú getur náð í breytuna
+14.Call stack er notað af þýðandanum til að vita hvar hann er í scriptinu 
