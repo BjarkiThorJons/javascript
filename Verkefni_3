@@ -1,1 +1,86 @@
-1. template literals er strengur sem getur verið með innbyggðar tjáningar
+1. template literals er strengur sem getur verið með innbyggðar tjáninga
+Venjulegt:
+console.log('lina 1\n' +
+'Lina  2');
+// "lina 1
+// lina 2"
+Template literals :
+console.log(`lina 1
+lina2`);
+// "lina 1
+// lina 2" 
+2.For Loopar í gegnum kóða og þú skilgreinir hversu oft
+For in Loopar í gegnum hluti object
+ForEach Loopar keyrir function fyrir hvern hlut í lista
+For of Loopar í gegnum iterable objects 
+3. var reverseMe = ["h", "e", "l", "l", "o"];
+	reverseMe.reverse();
+  var sortMe = [2, 1, 10, 7, 6];
+	sortMe.sort();
+  var removeFirstElement = ["a", "b", "c"];
+	shift() og splice()
+  var turnMeIntoAString = ["U", "d", "a", "c", "i", "t", "y"];
+	turnMeIntoAString.join('');
+4. var test = [12, 929, 11, 3, 199, 1000, 7, 1, 24, 37, 4,
+    19, 300, 3775, 299, 36, 209, 148, 169, 299,
+    6, 109, 20, 58, 139, 59, 3, 1, 139
+];
+test.forEach(function(num,index){
+    if (num%3===0){
+        test[index]=num+100
+    }
+});
+console.log(test)
+5.var bills = [50.23, 19.12, 34.01,
+    100.11, 12.15, 9.90, 29.11, 12.99,
+    10.00, 99.22, 102.20, 100.10, 6.77, 2.22
+];
+var totals = bills.map(function(tips) {
+  tips=Math.round((tips*1.15)*100)/100
+  return tips;
+});
+console.log(totals)
+6.for (var row = 0; row < numbers.length; row++) {
+  for (var num = 0; num < numbers[row].length; num++) {
+    if(numbers[row][num]%2===0){
+        numbers[row][num]='even'
+    }
+    else{
+        numbers[row][num]='odd'
+    }
+  }
+}
+console.log(numbers)
+7.
+
+8.var breakfast={
+    name:"The Lumberjack",
+    price:9.95,
+    ingredients:['eggs', 'sausage', 'toast', 'hashbrowns', 'pancakes']
+};
+9.var savingsAccount = {
+    balance: 1000,
+    interestRatePercent: 1,
+    deposit: function addMoney(amount) {
+        if (amount > 0) {
+            savingsAccount.balance += amount;
+        }
+    },
+    withdraw: function removeMoney(amount) {
+        var verifyBalance = savingsAccount.balance - amount;
+        if (amount > 0 && verifyBalance >= 0) {
+            savingsAccount.balance -= amount;
+        }
+    },
+    printAccountSummary:function(){
+        return('Welcome!\nYour balance is currently $'+savingsAccount.balance+" and your interest rate is "+savingsAccount.interestRatePercent+"%.")
+    }
+};
+
+console.log(savingsAccount.printAccountSummary());
+
+
+
+
+
+
