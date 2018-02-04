@@ -22,3 +22,5 @@ geimflaugar.prototype.fly=function(){
 };
 
 let geimflaug4 = new geimflaugar;
+geimflaug4.speed=5
+geimflaug4.damage=function(){this.life-=1}
