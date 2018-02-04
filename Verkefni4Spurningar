@@ -1,0 +1,3 @@
+2. Öll objects í javascript hafa eitt foreldra object. child object erfa hluti frá parnet object gegnum prototype sem sagt 
+child object getur notað fall sem parent object á. Þú getur búið til object með smið, þá er objectið með öll föllin sem
+smiðurinn er með.
