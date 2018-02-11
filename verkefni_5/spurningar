@@ -1,0 +1,11 @@
+1. Browserinn býr til DOM tré, getElementById() leitar af id í trénu og þegar id er fundið hættir það að leita.
+2. querySelectorAll() velur allt sem er með sama css identifier og setur það í lista
+3.var elements = document.getElementsByTagName('li');  Finna alla li hluti
+if (elements.length > 0) { Ef það eru fundir einhverjir hlutir
+ var el = elements[2];   Velur 3 hlutinn í listanum
+  el.className = 'cool'; }  breytir classanum í cool
+4.Þú velur elements sem eru með tagið sem þú velur t.d h1 og það skilar öllu í lista
+	var elements = document.getElementsByTagName('p');
+5.Flestir vafrar búa til autt text node þar sem er autt bil á milli elements. Auðu bilin koma í DOM tréin og geta leitt til vandræða. 
+Þú getur leist þetta með því að hafa engin bil á milli element <p></p
+                                                                ><div></div>
