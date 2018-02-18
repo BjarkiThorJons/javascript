@@ -1,0 +1,4 @@
+HTML EVENT HANDLERS - þá seturu javascript í html
+TRADITIONAL DOM EVENT HANDLERS - javascript og html er ekki blandað saman en þú getur bara notað eitt function með event
+DOM LEVEL 2 EVENT LISTENERS -  javascript og html er ekki blandað saman og þú getur notað mikið af function með sama event þess vegna er
+þessi leið best
