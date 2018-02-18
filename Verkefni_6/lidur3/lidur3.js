@@ -1,12 +1,16 @@
+let Div1 = document.createElement("div"); 
+Div1.setAttribute("id","quiz")
+document.body.appendChild(Div1); 
+
 let newDiv = document.createElement("div"); 
 newDiv.setAttribute("id","question")
 let newContent = document.createTextNode("Spurning 1"); 
 newDiv.appendChild(newContent);  
-document.body.appendChild(newDiv); 
+document.getElementById("quiz").appendChild(newDiv); 
 
 let newDiv1 = document.createElement("div"); 
 newDiv1.setAttribute("id","answers") 
-document.body.appendChild(newDiv1); 
+document.getElementById("quiz").appendChild(newDiv1); 
 
 let newDiv2 = document.createElement("div"); 
 newDiv2.setAttribute("class","answer","data-active","answer") 

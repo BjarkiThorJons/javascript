@@ -17,12 +17,18 @@ function adderino(spurning,svarmoguleikar,rettsvar){
 		spurningaStrengur+="</div>"
 		strengur=spurningaStrengur+svarStrengur
 		console.log(strengur)
-		document.getElementById("quiz").innerHTML+=strengur
-		
+		document.getElementById("quiz").innerHTML+=strengur	
 };
 
-let spurningin=getElementById("quiz")
-
+let spurningin = document.getElementBy("quiz").children
+console.log(spurningin)
+let i;
+let texti = ""
+for (i = 0; i < spurningin.length; i++) {
+    console.log("a")
+    texti+=spurningin[i].tagName
+    }
+document.getElementById("test")
 function checkSvar(rettSvar){
 	
 }
