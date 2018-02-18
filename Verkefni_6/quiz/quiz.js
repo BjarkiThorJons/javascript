@@ -21,7 +21,8 @@ function adderino(spurning,svarmoguleikar,rettsvar){
 };
 
 let spurningin = document.getElementBy("quiz").children
-console.log(spurningin)
+console.log(spurningin[0])
+//Virkar ekki að setja div í array sem voru gerð með javascript ????
 let i;
 let texti = ""
 for (i = 0; i < spurningin.length; i++) {
