@@ -16,22 +16,35 @@ function adderino(spurning,svarmoguleikar,rettsvar){
 		}
 		spurningaStrengur+="</div>"
 		strengur=spurningaStrengur+svarStrengur
-		console.log(strengur)
 		document.getElementById("quiz").innerHTML+=strengur	
 };
+function checkAnswer(){
+	let targetElement = event.target || event.srcElement;
+    for(x = 0; x < listi.length; x++){
+    	if (targetElement.textContent == listi[x].rettsvar){
+    		adderino(listi[1].spurning,listi[1].svarmoguleikar,listi[1].rettsvar);
+    		let drasl=document.getElementById("quiz").children
+    		drasl[1].remove()
+    		drasl[0].remove()
 
-let spurningin = document.getElementBy("quiz").children
-console.log(spurningin[0])
-//Virkar ekki að setja div í array sem voru gerð með javascript ????
-let i;
-let texti = ""
-for (i = 0; i < spurningin.length; i++) {
-    console.log("a")
-    texti+=spurningin[i].tagName
+    	}
+    	else{
+    	targetElement.style.color="red";
     }
-document.getElementById("test")
-function checkSvar(rettSvar){
-	
-}
+    }
+    
+};
+for(x = 0; x < listi.length; x++){
+	adderino(listi[x].spurning,listi[x].svarmoguleikar,listi[x].rettsvar);
+	let spurningin = document.getElementById("quiz").children
+	let svarmoguleikarnir = spurningin[1].children
+	let i;
+	let texti = ""
+	for (i = 0; i < svarmoguleikarnir.length; i++) {
+	    svarmoguleikarnir[i].addEventListener("click", checkAnswer, false);
+	    }
+	console.log("nein")
+	}
 
-adderino(listi[tala].spurning,listi[tala].svarmoguleikar,listi[tala].rettsvar);
+
+
