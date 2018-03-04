@@ -47,9 +47,11 @@ class VillageState {
 
   move(destination) {
   	console.log(roadGraph[this.place])
+    //Gáir hvort roadGraph[this.place] er með destination
     if (!roadGraph[this.place].includes(destination)) {
       return this;
     } else {
+      //Býr til nýtt destination
       let parcels = this.parcels.map(p => {
         if (p.place != this.place) return p;
         return {place: destination, address: p.address};
@@ -89,48 +91,52 @@ function runRobot(state, robot, memory) {
     console.log(`Moved to ${action.direction}`);
   }
 }
-
+//velur random hlut úr array
 function randomPick(array) {
   let choice = Math.floor(Math.random() * array.length);
   return array[choice];
 }
-
+//Býr til random stað fyrir robot
 function randomRobot(state) {
   return {direction: randomPick(roadGraph[state.place])};
 }
-
+//Býr til village state með 5 pökkum
 VillageState.random = function(parcelCount = 5) {
   let parcels = [];
   for (let i = 0; i < parcelCount; i++) {
+    //Velur random stað
     let address = randomPick(Object.keys(roadGraph));
+    //Velur random stað ef staðurinn er sá sami og address gerir functionið nýjan stað fyrir place
     let place;
     do {
       place = randomPick(Object.keys(roadGraph));
     } while (place == address);
+    //gerir lista af parcels
     parcels.push({place, address});
   }
   return new VillageState("Post Office", parcels);
 };
-
+//Robot fer á random staði til að fynna parcels
 runRobot(VillageState.random(), randomRobot);
 // → Moved to Marketplace
 // → Moved to Town Hall
 // → …
 // → Done in 63 turns
+//Póst leið
 const mailRoute = [
   "Alice's House", "Cabin", "Alice's House", "Bob's House",
   "Town Hall", "Daria's House", "Ernie's House",
   "Grete's House", "Shop", "Grete's House", "Farm",
   "Marketplace", "Post Office"
 ];
-
 function routeRobot(state, memory) {
   if (memory.length == 0) {
     memory = mailRoute;
   }
+  //tekur fyrsta gildið úr memory og gerið það af dircetion og droppar því úr memory listanum
   return {direction: memory[0], memory: memory.slice(1)};
 }
-
+//finnur allar mögulegar og velur styðstu
 function findRoute(graph, from, to) {
   let work = [{at: from, route: []}];
   for (let i = 0; i < work.length; i++) {
