@@ -9,6 +9,9 @@ function random(min, max) {
   var num = Math.floor(Math.random() * (max - min + 1)) + min;
   return num;
 }
+var image = new Image();
+image.src = "myndir/player2.png"
+
 
 function Ball(x, y, velX, velY, color, size, bounce) {
   this.x = x;
@@ -100,7 +103,7 @@ function loop() {
     );
     balls.push(ball);
   }
-  
+  ctx.drawImage(image, x, 100);
   for (var i = 0; i < balls.length; i++) {
   	balls[i].draw();
 	balls[i].update();
@@ -109,7 +112,6 @@ function loop() {
     }
 	
   }
-
   requestAnimationFrame(loop);
 }
 
