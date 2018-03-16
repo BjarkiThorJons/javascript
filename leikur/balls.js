@@ -11,7 +11,7 @@ function random(min, max) {
 }
 
 function Ball(x, y, velX, velY, color, size, bounce) {
-  this.x = 600;
+  this.x = x;
   this.y = 100;
   this.velX = velX;
   this.velY = velY;
@@ -68,33 +68,39 @@ Ball.prototype.collisionDetect = function() {
 }
 
 var balls = [];
-
+var x = 0
+var max = 100
+var yes = 1
 function loop() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
-  while (balls.length < 100) {
+  while (balls.length < max) {
+  	if (x >= width-100){
+  		yes = 0;
+  	};
+  	if (x <= 100){
+  		yes = 1;
+  	};
+  	if (yes == 1){
+  		x += 6;
+  	}
+  	else{
+  		x -=6
+  	}
+  	
     var ball = new Ball(
-      random(0,width),
+      x,
       random(0,height),
       random(-7,7),
-      random(-7,7),
-      'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
+      random(1,7),
+      'rgb(255,0,0)',
+      //'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
       random(10,20)
     );
     balls.push(ball);
   }
-  var boss = new Ball(
-      random(0,width),
-      random(0,height),
-      random(-7,7),
-      random(-7,7),
-      'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
-      random(10,200)
-  );
-  //boss.draw()
-  //boss.update()
-  console.log(balls)
+  
   for (var i = 0; i < balls.length; i++) {
   	balls[i].draw();
 	balls[i].update();
